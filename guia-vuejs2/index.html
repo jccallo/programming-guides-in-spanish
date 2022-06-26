@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Guia VueJs 2</title>
+
+</head>
+
+<body>
+
+   <!-- codigo HTML -->
+   <div id="app">
+      <h1>{{ title }}</h1>
+
+      <h2>Introduccion</h2>
+      <ul>
+         <li>Nombre: {{ firstName }}</li>
+         <li>Apellido: {{ lastName }}</li>
+         <li>Nombre alrevez: {{ reversedFirstName }}</li>
+         <li>Nombre Completo: {{ fullName }}</li>
+         <li>Detalles: {{ myDetails() }}</li>
+         <li>Estado Civil: <span v-if="isMarried">Casado</span><span v-else>Soltero</span></li>
+         <li>Modificar Estado Civil: <button v-on:click="setMarried">Cambiar</button></li>
+         <li><input type="text" v-model="text" placeholder="Ingresar Texto" /> {{text}}</li>
+
+      </ul>
+
+      <p>Lista frutas usando un v-for con un array</p>
+      <ul>
+         <li v-for="fruit in fruits">{{fruit}}</li>
+      </ul>
+
+      <p>Lista de Tareas pasando array a un componente</p>
+      <ul>
+         <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id">
+         </todo-item>
+      </ul>
+
+      <p>Lista datos recorriendo un objeto con v-for</p>
+      <div v-for="(value, key, index) in object">
+         {{ index }}. {{ key }}: {{ value }}
+      </div>
+
+      <h2>Sintaxis</h2>
+      <li v-html="rawHtml"></li>
+      <li><span v-bind:id="dynamicId">my id dinamico</span></li>
+      <li><button v-bind:disabled="isButtonDisabled">Button</button></li>
+      <div class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">v-bind:class ...1</div>
+      <div v-bind:class="classObject">v-bind:class ...2</div>
+      <div v-bind:class="[activeClass, errorClass]">class="active text-danger"</div>
+      <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">Enlace de estilos en línea</div>
+
+      <h2>Renderizacion condicional</h2>
+      <div v-if="type === 'A'">
+         A
+      </div>
+      <div v-else-if="type === 'B'">
+         B
+      </div>
+      <div v-else-if="type === 'C'">
+         C
+      </div>
+      <div v-else>
+         Si no es A, B o C
+      </div>
+
+   </div>
+
+   <!-- CDN vuejs 2 -->
+   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+   <!-- codigo javascript -->
+   <script src="script.js"></script>
+
+</body>
+
+</html>
