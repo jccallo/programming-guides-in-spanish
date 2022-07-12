@@ -1,4 +1,4 @@
-# tutorial laravel parte 1: Creacion de proyecto
+# tutorial laravel
 
 ## Requisitos
 * NodeJS
@@ -18,7 +18,7 @@ composer self-update --rollback
 mas informacion: [Actualizar composer](https://stackoverflow.com/questions/64597051/how-to-downgrade-or-install-a-specific-version-of-composer)
 
 ## crear proyecto con el instalador de laravel
-instalar laravel-installer:
+instalar laravel installer:
 ```
 composer global require laravel/installer
 ```
@@ -29,7 +29,7 @@ laravel new example-app
 ```
 
 ## Crear un proyecto con composer
-por defecto composer crea un proyecto en laravel 8 (hacer pruebas)
+por defecto composer crea un proyecto en laravel 8
 ```
 composer create-project laravel/laravel my-project
 ```
@@ -44,12 +44,7 @@ o una version aun mas especifica anterior
 composer create-project laravel/laravel my-project "5.5.*"
 ```
 
-o una version super especifica
-```
-composer create-project laravel/laravel my-project "5.5.4"
-```
-
-Lo encontré aqui [Crear proyecto laravel de cualquier version](https://cirelramos.blogspot.com/2016/11/laravel-crear-proyecto-en-version.html)
+Lo encontré aqui [Fuente](https://cirelramos.blogspot.com/2016/11/laravel-crear-proyecto-en-version.html)
 
 ## ejecutar el proyecto laravel
 ```
@@ -57,22 +52,12 @@ cd my-project
 php artisan serve
 ```
 
-
-
-
-
-
-
-
-
-
-
 si usas laragon simplemente recarga los servicos de apache y mysql "Reload" y ve a la direccion "my-project.test"
 
-## conectar la base de datos para hacer migraciones
+## conectar la base de datos
 primero crear la base de datos
 
-luego setear el archivo .env
+.env
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
